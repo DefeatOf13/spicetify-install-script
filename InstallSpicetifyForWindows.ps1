@@ -42,26 +42,6 @@ else {
         }
     } # End of function DownloadSpicetifyScript
 
-    function ConfigureSpotify {
-    Start-Sleep -Seconds 5 # pauses for 5 seconds to allow Spotify time to load
-
-    spicetify config color_scheme purple
-    # Applies the colour scheme. Change this to be the colour you want to be applied to the Spotify.
-    # Default is base (Green). Other options include purple, beach-sunset (red), dark (yellow), gruvbox (dark green), nord-dark (light blue), nord-light (light blue with white), and white
-
-    Start-Sleep -Seconds 3 # pauses for 3 seconds to allow Spotify time to load
-
-    spicetify config extensions fullAppDisplay.js
-    spicetify config custom_apps reddit
-    spicetify config custom_apps lyrics-plus
-    spicetify apply
-
-    Write-Output "The script has completed its operation. Please make sure to check that the theme is working, and that applications such as Lyrics and fullAppDisplay are being displayed."
-
-    PAUSE
-    } # End of function ConfigureSpotify
-
     RemoveOldSpicetifyInstall
     DownloadSpicetifyScript
-    ConfigureSpotify
 } # End if (if CheckIfSpicetifyIsInstalled) check
